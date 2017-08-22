@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wangjt.viewdraghelper.feedback.FeedbackActivity">
+
+    <RelativeLayout
+        android:id="@+id/feedback_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cc4076a5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="意见反馈"
+            android:textColor="#f0f0f0"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/submit_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="送出"
+            android:textColor="#c0c0c0"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feedback_title_layout"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:id="@+id/feedback_dec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.3"
+                android:padding="10dp"
+                android:text="从前有座山, 山里有座庙, 庙里有个奥特曼, 我送你离开 , 千里之外, 海鸟跟鱼坐爱 , 只是一场意外 , 神秘北极圈, 阿拉斯加的山巅 , 北冥有鱼 , 其名为鲲 , 知北游于北玄水之上,登隐弅之丘 ,而适遭无为谓焉." />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/categorylayout_shape"
+                android:paddingBottom="15dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/feed_back_category_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <ImageView
+                        android:id="@+id/category_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_launcher_round" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/category_icon"
+                        android:gravity="center"
+                        android:text="意见类别(服务活动)"
+                        android:textColor="#ccddee" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/feed_back_gride_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/feed_back_category_layout"
+                    android:background="#9ac3d3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/appeal_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="客户申诉" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/feed_back_appeal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never" />
+
+                    <TextView
+                        android:id="@+id/inquiry_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="客户询问" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/feed_back_inquiry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never" />
+
+                    <EditText
+                        android:id="@+id/feed_back_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/shape_white"
+                        android:gravity="top"
+                        android:hint="请填写您的宝贵意见!"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="8dp"
+                        android:textColorHint="#999999"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
